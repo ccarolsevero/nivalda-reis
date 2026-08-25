@@ -503,8 +503,14 @@ ul {
   .hero {
     display: block;
     min-height: auto;
-    overflow: visible;
-    padding: var(--header-h) 0 0;
+    overflow: hidden;
+    padding: var(--header-h) 0 2rem;
+    background: linear-gradient(
+      180deg,
+      var(--sage-light) 0%,
+      var(--cream) 52%,
+      var(--beige) 100%
+    );
   }
 
   .hero-media {
@@ -512,35 +518,44 @@ ul {
     inset: auto;
     width: 100%;
     aspect-ratio: 4 / 5;
-    max-height: min(62vh, 520px);
+    min-height: min(72vh, 620px);
+    max-height: none;
+  }
+
+  .hero-media picture {
+    height: 100%;
+    min-height: inherit;
   }
 
   .hero-photo {
     object-fit: cover;
-    object-position: 55% 22%;
+    object-position: center 28%;
+    min-height: 100%;
   }
 
   .hero-veil {
     background:
       linear-gradient(
         to bottom,
-        rgba(74, 90, 68, 0.05) 0%,
-        rgba(168, 180, 164, 0.12) 40%,
-        rgba(232, 240, 228, 0.92) 88%,
-        var(--cream) 100%
+        rgba(74, 90, 68, 0.06) 0%,
+        transparent 28%,
+        rgba(212, 224, 208, 0.35) 62%,
+        rgba(240, 245, 236, 0.92) 88%,
+        rgba(240, 245, 236, 1) 100%
       );
   }
 
   .hero-inner {
     position: relative;
-    margin-top: -2.5rem;
-    padding: 0 var(--space) 2.5rem;
+    margin-top: -4.5rem;
+    padding: 0 var(--space);
+    z-index: 2;
   }
 
   .hero-copy {
     max-width: none;
-    background: var(--cream);
-    padding-top: 0.25rem;
+    background: transparent;
+    padding: 0.5rem 0 0;
   }
 
   .hero-brand {
